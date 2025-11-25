@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 import BackgroundSlider from "@/components/shared/BackgroundSlider";
 import LoadingScreen from "@/components/registration/LoadingScreen";
@@ -43,6 +44,7 @@ const RegistrationPage = () => {
       if (result.success) {
         // Show success modal in loading screen
         setShowSuccess(true);
+        toast.success("Đăng ký thành công! Đang chuyển hướng...");
         // Wait 5 seconds then redirect
         setTimeout(() => {
           setIsLoading(false);
@@ -51,12 +53,12 @@ const RegistrationPage = () => {
         }, 5000);
       } else {
         setIsLoading(false);
-        alert("Có lỗi xảy ra! Vui lòng thử lại.");
+        toast.error("Có lỗi xảy ra! Vui lòng thử lại.");
       }
     } catch (error) {
       console.error("Error:", error);
       setIsLoading(false);
-      alert("Không thể kết nối đến server!");
+      toast.error("Không thể kết nối đến server!");
     }
   };
 

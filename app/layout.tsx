@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Be_Vietnam_Pro } from "next/font/google";
 import { LenisProvider } from "@/components/providers/LenisProvider";
+import { ToasterProvider } from "@/components/providers/ToasterProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,7 +37,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${beVietnam.variable} phoenix-scroll antialiased min-h-screen bg-[#050505] text-white`}
       >
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          {children}
+          <ToasterProvider />
+        </LenisProvider>
       </body>
     </html>
   );

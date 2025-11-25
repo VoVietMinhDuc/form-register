@@ -67,7 +67,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
       studentId: z
         .string()
         .min(1, "Vui lòng nhập MSSV")
-        .regex(/^[A-Z]{2}\d{6}$/, "MSSV không đúng định dạng (VD: SE210210)"),
+        .regex(/^[A-Z]{2}\d{6}$/, "MSSV không đúng định dạng"),
       phone: z
         .string()
         .min(1, "Vui lòng nhập số điện thoại")
@@ -242,9 +242,11 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
     >
   ) => {
     const { name, value } = e.target;
+    const formattedValue =
+      name === "studentId" ? value.toUpperCase() : value;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: formattedValue,
     });
     // Clear error when user starts typing
     if (errors[name]) {
@@ -456,9 +458,12 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                             required={field.required}
                             rows={4}
                             maxLength={field.maxLength}
-                            className={`w-full px-4 py-3 pb-8 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all resize-none bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${errors[field.name]
-                              ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
-                              : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
+                            className={`w-full ${field.name === "goal" || field.name === "expectation"
+                              ? "px-5 py-4 pb-10"
+                              : "px-4 py-3 pb-8"
+                              } text-base border rounded-lg focus:ring-2 focus:outline-none transition-all resize-none bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${errors[field.name]
+                                ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
+                                : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
                               }`}
                             placeholder={
                               field.placeholder ||
