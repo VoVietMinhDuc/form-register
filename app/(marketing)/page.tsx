@@ -13,10 +13,10 @@ export default function Home() {
       <PhoenixNavbar />
       <div className="mt-16 flex flex-col gap-16">
         <HeroSection />
+        <ShowcaseSection />
         <FeaturedBlogSection />
         <MotionCarouselSection />
         {/* <FeatureSection /> */}
-        <ShowcaseSection />
         {/* <CTASection /> */}
       </div>
       <footer className="mt-16 text-center text-xs uppercase tracking-[0.4em] text-white/50">

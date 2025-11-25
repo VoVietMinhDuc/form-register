@@ -52,12 +52,23 @@ export function MotionCarouselSection() {
 
   useEffect(() => {
     let isRunning = true;
+    let mounted = true;
 
     const animate = async () => {
-      // Bắt đầu từ 0%
-      controls.set({ x: "0%" });
+      // Đợi component mount xong trước khi gọi controls.set()
+      await new Promise((resolve) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (mounted) {
+              // Bắt đầu từ 0% sau khi component đã mount
+              controls.set({ x: "0%" });
+            }
+            resolve(undefined);
+          });
+        });
+      });
 
-      while (isRunning) {
+      while (isRunning && mounted) {
         // Cuộn từ vị trí hiện tại đến -50% (qua 1 bộ đầu tiên)
         await controls.start({
           x: "-50%",
@@ -70,12 +81,16 @@ export function MotionCarouselSection() {
         // Reset về 0% ngay lập tức (không có transition) để seamless
         // Vì bộ thứ 2 giống hệt bộ đầu, nên không bị giật
         // Sử dụng requestAnimationFrame để đảm bảo reset mượt mà
-        await new Promise((resolve) => {
-          requestAnimationFrame(() => {
-            controls.set({ x: "0%" });
-            resolve(undefined);
+        if (isRunning && mounted) {
+          await new Promise((resolve) => {
+            requestAnimationFrame(() => {
+              if (mounted) {
+                controls.set({ x: "0%" });
+              }
+              resolve(undefined);
+            });
           });
-        });
+        }
       }
     };
 
@@ -83,6 +98,7 @@ export function MotionCarouselSection() {
 
     return () => {
       isRunning = false;
+      mounted = false;
     };
   }, [controls]);
 
@@ -99,10 +115,10 @@ export function MotionCarouselSection() {
       />
       <div className="relative space-y-6 text-center">
         <p className="text-sm uppercase tracking-[0.5em] text-white/60">
-          PHOENIX
+          RISE SPACE
         </p>
         <h2 className="text-3xl font-extrabold text-white md:text-5xl">
-          <GradientText>RISE SPACE - KHÔNG GIAN ĐỂ VƯƠN MÌNH</GradientText>
+          <GradientText className="pt-2">KHÔNG GIAN ĐỂ VƯƠN MÌNH</GradientText>
         </h2>
         <p className="mx-auto max-w-3xl text-base text-white/75">
           SÂN CHƠI HỌC THUẬT TOP ĐẦU DÀNH CHO TÂN SINH VIÊN FPTU HCM

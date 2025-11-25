@@ -83,12 +83,12 @@ const RegistrationPage = () => {
 
         {/* Content Overlay */}
         <motion.div
-          className="relative z-10 min-h-screen py-12 px-4 md:px-6"
+          className="relative z-10 min-h-screen flex items-center justify-center px-4 md:px-6 py-12"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="container mx-auto">
+          <div className="w-full max-w-4xl">
             {/* Form */}
             <MultiStepForm onSubmit={handleSubmit} />
 

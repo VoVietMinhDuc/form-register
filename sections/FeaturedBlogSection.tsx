@@ -48,13 +48,13 @@ export function FeaturedBlogSection() {
           variants={fadeUp(0)}
           className="text-sm uppercase tracking-[0.5em] text-white/60"
         >
-          Phoenix Blog
+          Phoenix's House Blog
         </motion.p>
         <motion.h2
           variants={fadeUp(0.1)}
           className="mt-4 text-3xl font-bold leading-tight text-white md:text-5xl"
         >
-          <GradientText>Bài viết nổi bật</GradientText>
+          <GradientText className="pt-2">BÀI VIẾT NỔI BẬT</GradientText>
         </motion.h2>
         <motion.p
           variants={fadeUp(0.15)}

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#member", label: "Member" },
+  { href: "#member", label: "Members" },
   { href: "#rise-space", label: "Rise Space" },
   { href: "#blog", label: "Blog" },
 ];
@@ -64,7 +64,7 @@ export function PhoenixNavbar() {
         <Button
           size="sm"
           asChild
-          className="fire-border hidden rounded-full bg-gradient-to-r from-[#ff0000] via-[#ff6b00] to-[#ffd86b] text-black shadow-[0_0_20px_rgba(255,91,15,0.6)] tracking-tight md:inline-flex"
+          className="fire-border hidden rounded-full bg-gradient-to-r from-[#ff2222] via-[#ff6b00] to-[#ffd050] text-black shadow-[0_0_20px_rgba(255,91,15,0.6)] tracking-tight md:inline-flex"
         >
           <Link href="/registration">Đăng kí Rise Space</Link>
         </Button>

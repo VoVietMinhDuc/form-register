@@ -45,7 +45,7 @@ export function HeroSection() {
           className="text-4xl font-black leading-tight md:text-6xl lg:text-7xl"
         >
           <GradientText className="fire-gradient text-balance text-4xl font-black md:text-6xl">
-            PHOENIX HOUSE
+            PHOENIX'S HOUSE
             {/* <br /> PHƯỢNG HOÀNG RỰC LỬA */}
           </GradientText>
         </motion.h1>
