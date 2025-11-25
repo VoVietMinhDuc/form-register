@@ -26,7 +26,7 @@ const featuredPosts = [
     excerpt:
       "Nơi ngọn lửa Yanar Dag bất diệt truyền cảm hứng tái sinh và khát vọng chinh phục.",
     tag: "Culture",
-    href: "/blog/phoenix-house-2025-kick-off",
+    href: "/blog/phoenix-house-kick-off-2025",
   },
 ];
 
