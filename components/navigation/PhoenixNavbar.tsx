@@ -11,8 +11,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#blog", label: "Blog" },
+  { href: "#member", label: "Member" },
   { href: "#rise-space", label: "Rise Space" },
+  { href: "#blog", label: "Blog" },
 ];
 
 export function PhoenixNavbar() {

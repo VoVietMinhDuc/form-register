@@ -1,8 +1,45 @@
 {
-  "slug": "blog-4",
-  "title": "Blog 4",
-  "date": "2024-05-01",
-  "excerpt": "Tóm tắt blog 4.",
-  "image": "/phoenix4.jpg",
-  "content": "Nội dung chi tiết cho blog 4. Bạn có thể chỉnh sửa trực tiếp file này để cập nhật nội dung." 
+  "slug": "digisurvive",
+  "tag": "Events",
+  "title": "Digisurvive: Trải nghiệm sinh tồn trong thời đại mới",
+  "date": "2025-10-15",
+  "excerpt": "Hành trình thực tế, gay cấn và bổ ích, nơi Tân sinh viên K21 rèn luyện kỹ năng sinh tồn trong kỷ nguyên mới tại kỳ Rèn Luyện Tập Trung",
+  "image": "/digisurvive/ss2/brosis3.jpg",
+  "carousel1": [
+    "/digisurvive/ss1/brosis.jpg",
+    "/digisurvive/ss1/brosis2.jpeg",
+    "/digisurvive/ss2/brosis3.jpg",
+    "/digisurvive/ss1/chuyen-gia.jpg",
+    "/digisurvive/ss1/stu2.jpg"
+  ],
+  "content1": "Digisurvive là hành trình trải nghiệm thực tế, nơi các tân sinh viên K21 được thử thách bản thân qua những hoạt động sinh tồn, teamwork và giải quyết vấn đề trong môi trường hiện đại. Tại đây, các bạn không chỉ học cách thích nghi với những thay đổi của thời đại số mà còn rèn luyện kỹ năng mềm, tư duy sáng tạo và tinh thần đồng đội. Mỗi thử thách là một cơ hội để các thành viên phát huy bản lĩnh, vượt qua giới hạn và cùng nhau chinh phục mục tiêu chung. Digisurvive không chỉ là một sự kiện, mà còn là bước khởi đầu cho hành trình trưởng thành của mỗi sinh viên trong kỷ nguyên mới.",
+  "carousel2": [
+    "/digisurvive/ss1/stu6.jpeg",
+    "/digisurvive/ss1/stu7.jpeg",
+    "/digisurvive/ss1/cpr.jpg",
+    "/digisurvive/ss2/card.jpg",
+    "/digisurvive/ss2/stu9.jpg",
+    "/digisurvive/ss2/stu10.jpg",
+
+    "/kick-off/sit2.jpg",
+    "/kick-off/sit.jpg",
+    "/kick-off/sit3.jpg",
+    "/kick-off/sit4.jpg",
+    "/kick-off/sit5.jpg",
+    "/kick-off/sit6.jpg",
+    "/kick-off/sit7.jpg"
+  ],
+  "content2": "Digisurvive không chỉ là nơi các bạn trẻ thử sức với những thử thách mới lạ, mà còn là dịp để mỗi thành viên khám phá bản thân, phát hiện tiềm năng và phát triển kỹ năng lãnh đạo, hợp tác. ",
+  "carousel3": [
+    "/digisurvive/ss1/luadao.jpg",
+    "/digisurvive/ss1/luadao1.jpg",
+    "/digisurvive/ss1/stu1.jpg",
+    "/digisurvive/ss1/stu3.jpg",
+    "/digisurvive/ss1/stu4.jpg",
+    "/digisurvive/ss1/stu5.jpeg",
+    "/digisurvive/ss1/stu8.jpeg",
+    "/digisurvive/ss1/vst.jpg",
+    "/digisurvive/ss2/vst2.jpg"
+  ],
+  "content3": "Digisurvive hướng tới việc truyền cảm hứng cho thế hệ sinh viên năng động, sáng tạo và bản lĩnh. Chương trình không chỉ chú trọng phát triển kỹ năng sống, tinh thần đồng đội mà còn ứng dụng công nghệ hiện đại vào các hoạt động, giúp tăng sức hút và tạo trải nghiệm mới mẻ cho người tham gia. Những giá trị, cảm xúc và kỷ niệm tại Digisurvive sẽ là hành trang ý nghĩa để mỗi sinh viên tự tin chinh phục thử thách trong tương lai."
 }

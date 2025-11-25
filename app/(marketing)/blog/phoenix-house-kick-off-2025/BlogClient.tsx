@@ -81,7 +81,7 @@ export default function BlogClient({ blog }: Props) {
 
             {blog.content2 && (
               <>
-                <h2 className="mt-8 text-2xl font-bold text-white">Tầm nhìn</h2>
+                <h2 className="mt-8 text-2xl font-bold text-white"></h2>
                 <p>{blog.content2}</p>
               </>
             )}
@@ -95,9 +95,7 @@ export default function BlogClient({ blog }: Props) {
 
             {blog.content3 && (
               <>
-                <h2 className="mt-8 text-2xl font-bold text-white">
-                  Cộng đồng
-                </h2>
+                <h2 className="mt-8 text-2xl font-bold text-white"></h2>
                 <p>{blog.content3}</p>
               </>
             )}
