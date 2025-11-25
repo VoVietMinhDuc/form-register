@@ -1,7 +1,7 @@
 {
-  "slug": "kick-off-brothers-and-sisters-2025",
+  "slug": "brothers-and-sisters-kick-off-2025",
   "tag": "Culture",
-  "title": "Kick Off Brothers & Sisters 2025",
+  "title": "Brothers & Sisters Kick-off 2025",
   "date": "2025-03-15",
   "excerpt": "Một buổi workshop thú vị với hơn 200 người tham gia.",
   "image": "/phoenix1.jpg",
@@ -13,7 +13,7 @@
     "/kick-off/house1.jpg",
     "/kick-off/prj.jpg"
   ],
-  "content1": "Chúng tôi đã tổ chức một buổi workshop với các chủ đề về Web, AI và DevOps. Buổi workshop bao gồm phần trình bày, demo và Q&A. Cảm ơn mọi người đã tham gia!",
+  "content1": "Brothers & Sisters 2025 Kick-off là nơi các thành viên được gặp gỡ và giao lưu. Không khí sôi động, thân thiện đã giúp mọi người dễ dàng kết nối và tạo nên những ấn tượng khó quên ngay từ những phút đầu tiên.",
   "carousel2": [
     "/kick-off/co-founder.jpg",
     "/kick-off/sit2.jpg",
@@ -24,7 +24,7 @@
     "/kick-off/sit6.jpg",
     "/kick-off/sit7.jpg"
   ],
-  "content2": "Nội dung chi tiết về các chủ đề được trình bày trong buổi workshop:\n\n1. Web Development: Giới thiệu về các framework mới nhất và cách xây dựng ứng dụng web hiện đại.\n\n2. Artificial Intelligence: Các ứng dụng AI trong thực tế và cách tích hợp AI vào sản phẩm.",
+  "content2": "Brothers & Sisters Kick-off 2025 đánh dấu khởi đầu cho hành trình phát triển bản thân của mỗi thành viên, đồng thời lan tỏa mô hình 'sinh viên giúp sinh viên' tinh thần đặc trưng của đại gia đình. Kick-off thể hiện tinh thần sẵn sàng chăm sóc, hỗ trợ và hướng dẫn các tân sinh viên, giúp các bạn nhanh chóng hòa nhập, tự tin và vững bước trên con đường đại học. Đây chính là nền tảng để xây dựng một cộng đồng đoàn kết, sẻ chia và luôn đồng hành cùng nhau trong mọi thử thách.",
   "carousel3": [
     "/kick-off/perform.jpg",
     "/kick-off/perform1.jpg",
@@ -36,6 +36,5 @@
     "/kick-off/prj.jpg",
     "/kick-off/stand.jpg",
     "/kick-off/stand1.jpg"
-  ],
-  "content3": "DevOps: Các công cụ và quy trình để tối ưu hóa quá trình phát triển và triển khai phần mềm.\n\nCảm ơn tất cả các bạn đã tham gia và làm cho buổi workshop trở nên thành công!"
+  ]
 }

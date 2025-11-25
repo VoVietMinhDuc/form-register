@@ -15,11 +15,11 @@ const featuredPosts = [
     href: "/blog/digisurvive",
   },
   {
-    title: "Vô địch giải đá banh Brothers and Sisters 2025",
+    title: "Phoenix Cup",
     excerpt:
-      "Cuộc chiến khắc nghiệt, nơi tinh thần đồng đội và ngọn lửa chiến thắng của Phoenix House bùng cháy trên sân cỏ Brothers and Sisters 2025.",
-    tag: "Culture",
-    href: "/blog/we-are-champions",
+      "Sân chơi trí tuệ, nơi ngọn lửa đam mê bùng cháy, kết nối cộng đồng qua từng trận đấu hấp dẫn",
+    tag: "Events",
+    href: "/blog/phoenix-cup",
   },
   {
     title: "Phoenix House Kick-off 2025",

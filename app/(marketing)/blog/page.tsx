@@ -48,7 +48,7 @@ const blogPosts = [
     excerpt:
       "Bắt đầu hành trình chinh phục đỉnh cao cùng Phoenix House tại Brothers & Sisters 2025.",
     tag: "Culture",
-    href: "/blog/brothers-and-sisters-2025-kick-off",
+    href: "/blog/brothers-and-sisters-kick-off-2025",
   },
   {
     id: 1,
@@ -56,7 +56,7 @@ const blogPosts = [
     excerpt:
       "Nơi ngọn lửa Yanar Dag bất diệt truyền cảm hứng tái sinh và khát vọng chinh phục.",
     tag: "Culture",
-    href: "/blog/phoenix-house-2025-kick-off",
+    href: "/blog/phoenix-house-kick-off-2025",
   },
 ];
 
