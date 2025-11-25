@@ -33,7 +33,7 @@ export function ShowcaseSection() {
         {/* Header */}
         <motion.div variants={fadeUp(0)} className="relative z-10 mb-16 text-center">
           <p className="text-sm uppercase tracking-[0.5em] text-white/60">
-            Phoenix's House Members
+            Phoenix House's Members
           </p>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-white md:text-5xl">
             <GradientText className="text-4xl p-2 font-black md:text-5xl">

@@ -48,7 +48,7 @@ export function FeaturedBlogSection() {
           variants={fadeUp(0)}
           className="text-sm uppercase tracking-[0.5em] text-white/60"
         >
-          Phoenix's House Blog
+          Phoenix House's Blog
         </motion.p>
         <motion.h2
           variants={fadeUp(0.1)}

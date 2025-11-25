@@ -34,17 +34,17 @@ const blogPosts = [
     tag: "Events",
     href: "/blog/digisurvive",
   },
-  {
-    id: 3,
-    title: "Vô địch giải đá banh Brothers and Sisters 2025",
-    excerpt:
-      "Cuộc chiến khắc nghiệt, nơi tinh thần đồng đội và ngọn lửa chiến thắng của Phoenix House bùng cháy trên sân cỏ Brothers and Sisters 2025.",
-    tag: "Culture",
-    href: "/blog/we-are-champions",
-  },
+  // {
+  //   id: 3,
+  //   title: "Vô địch giải đá banh Brothers and Sisters 2025",
+  //   excerpt:
+  //     "Cuộc chiến khắc nghiệt, nơi tinh thần đồng đội và ngọn lửa chiến thắng của Phoenix House bùng cháy trên sân cỏ Brothers and Sisters 2025.",
+  //   tag: "Culture",
+  //   href: "/blog/we-are-champions",
+  // },
   {
     id: 2,
-    title: "Brothers & Sisters 2025 với Phoenix House Kick-off",
+    title: "Brothers & Sisters 2025 Kick-off",
     excerpt:
       "Bắt đầu hành trình chinh phục đỉnh cao cùng Phoenix House tại Brothers & Sisters 2025.",
     tag: "Culture",

@@ -45,7 +45,7 @@ export function HeroSection() {
           className="text-4xl font-black leading-tight md:text-6xl lg:text-7xl"
         >
           <GradientText className="fire-gradient text-balance text-4xl font-black md:text-6xl">
-            PHOENIX'S HOUSE
+            PHOENIX HOUSE
             {/* <br /> PHƯỢNG HOÀNG RỰC LỬA */}
           </GradientText>
         </motion.h1>
@@ -96,7 +96,7 @@ export function HeroSection() {
             </div>
           </div>
           <div className="absolute bottom-8 left-8 rounded-full border border-white/20 bg-black/60 px-4 py-2 text-xs uppercase tracking-[0.4em] text-white/80 backdrop-blur">
-            Phoenix&apos;s House
+            Phoenix House
           </div>
         </motion.div>
       </motion.div>
