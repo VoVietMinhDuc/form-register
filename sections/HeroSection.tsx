@@ -83,7 +83,7 @@ export function HeroSection() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#ff0000]/50 via-transparent to-[#ff4500]/25 blur-[110px]" />
           <div className="relative overflow-hidden rounded-[32px]">
             <Image
-              src="/phoenix.jpg"
+              src="https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140451/phoenix_igpyra.jpg"
               alt="Phoenix House Illustration"
               width={1400}
               height={800}

@@ -3,33 +3,33 @@
   "title": "Phoenix House Kick-off 2025",
   "date": "2024-01-10",
   "excerpt": "Một buổi ra mắt các thành viên trong nhà Phoenix",
-  "image": "/kick-off-phoenix/house2.jpg",
+  "image": "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140187/house2_e2fiwj.jpg",
   "carousel1": [
-    "/kick-off-phoenix/house1.jpg",
-    "/kick-off-phoenix/house2.jpg",
-    "/kick-off-phoenix/house3.jpg",
-    "/kick-off-phoenix/house.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140188/house1_gdwymb.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140187/house2_e2fiwj.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140165/house3_vab5lg.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140186/house_fo9ve2.jpg"
   ],
   "content1": "Chào mừng các thành viên mới gia nhập Phoenix House!",
   "carousel2": [
-    "/kick-off-phoenix/ac.jpg",
-    "/kick-off-phoenix/ac1.jpg",
-    "/kick-off-phoenix/ac2.jpg",
-    "/kick-off-phoenix/ac3.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140193/ac_jmavey.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140189/ac1_yl1onj.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140191/ac2_r3ve6x.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140195/ac3_qhdiwz.jpg"
   ],
   "content2": "Chương trình bao gồm các hoạt động giao lưu, team building sáng tạo và những thử thách thú vị, giúp các thành viên nhanh chóng hòa nhập, hiểu nhau hơn và xây dựng tinh thần đồng đội vững chắc. Mỗi khoảnh khắc đều là cơ hội để các bạn thể hiện cá tính, phát huy sức mạnh tập thể và tạo nên những kỷ niệm khó quên.",
   "carousel3": [
-    "/kick-off-phoenix/sit.jpg",
-    "/kick-off-phoenix/sit2.jpg",
-    "/kick-off-phoenix/sit3.jpg",
-    "/kick-off-phoenix/sit4.jpg",
-    "/kick-off-phoenix/sit5.jpg",
-    "/kick-off-phoenix/sit6.jpg",
-    "/kick-off-phoenix/sit7.jpg",
-    "/kick-off-phoenix/sit8.jpg",
-    "/kick-off-phoenix/sit9.jpg",
-    "/kick-off-phoenix/sit10.jpg",
-    "/kick-off-phoenix/sit1.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140166/sit_jg8cjq.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140195/sit2_qkv0qb.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140166/sit3_erdsc6.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140193/sit4_hvieeq.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140189/sit5_hqemhq.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140195/sit6_gkdws7.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140167/sit7_cxf8zg.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140191/sit8_weqlzw.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140191/sit9_qeqcea.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140192/sit10_vbtq5t.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140188/sit1_rt8q9i.jpg"
   ],
   "content3": "Phoenix House Kick Off không chỉ là sự kiện mở màn, mà còn là nguồn cảm hứng để mỗi thành viên tự tin, chủ động và sẵn sàng chinh phục mọi thử thách trong năm mới. Cảm ơn tất cả các bạn đã góp phần tạo nên một khởi đầu rực rỡ cho Phoenix House 2025!"
 }

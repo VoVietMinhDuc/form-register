@@ -16,31 +16,36 @@ const libraries = [
     name: "Lenis Smooth",
     detail: "Chuyển cảnh lụa như lửa, điều khiển tốc độ cuộn",
     accent: "rgba(255,216,107,0.35)",
-    image: "/rise-space-01/ta4.jpg",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140168/ta4_rpk2p3.jpg",
   },
   {
     name: "magicui",
     detail: "Spotlight, glow grid, parallax flame layers",
     accent: "rgba(255,107,0,0.4)",
-    image: "/rise-space-01/ta2.jpg",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140171/ta2_f45e9i.jpg",
   },
   {
     name: "motion-primitives",
     detail: "MotionButton · MotionCard với hiệu ứng spring",
     accent: "rgba(255,45,0,0.35)",
-    image: "/rise-space-01/se6.jpg",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140173/se6_k2tocz.jpg",
   },
   {
     name: "shadcn/ui",
     detail: "Button · Card · Typography tái thiết kế Phoenix",
     accent: "rgba(255,255,255,0.15)",
-    image: "/rise-space-01/gd3.jpg",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140277/gd3_srvldq.jpg",
   },
   {
     name: "shadcn/ui",
     detail: "Button · Card · Typography tái thiết kế Phoenix",
     accent: "rgba(255,255,255,0.15)",
-    image: "/rise-space-01/se5.jpg",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140171/se5_dlifbq.jpg",
   },
 ];
 

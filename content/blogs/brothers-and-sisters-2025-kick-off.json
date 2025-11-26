@@ -6,35 +6,35 @@
   "excerpt": "Một buổi workshop thú vị với hơn 200 người tham gia.",
   "image": "/phoenix1.jpg",
   "carousel1": [
-    "/kick-off/house.jpg",
-    "/kick-off/house4.jpg",
-    "/kick-off/perform7.jpg",
-    "/kick-off/perform5.jpg",
-    "/kick-off/house1.jpg",
-    "/kick-off/prj.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140180/house_sjijap.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140172/house4_vlvyzc.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140186/perform7_zs5ory.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140178/perform5_uaeffn.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140181/house1_cosjvi.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140186/prj_mvqodb.jpg"
   ],
   "content1": "Brothers & Sisters 2025 Kick-off là nơi các thành viên được gặp gỡ và giao lưu. Không khí sôi động, thân thiện đã giúp mọi người dễ dàng kết nối và tạo nên những ấn tượng khó quên ngay từ những phút đầu tiên.",
   "carousel2": [
-    "/kick-off/co-founder.jpg",
-    "/kick-off/sit2.jpg",
-    "/kick-off/sit.jpg",
-    "/kick-off/sit3.jpg",
-    "/kick-off/sit4.jpg",
-    "/kick-off/sit5.jpg",
-    "/kick-off/sit6.jpg",
-    "/kick-off/sit7.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140175/co-founder_v6t0wg.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140183/sit2_wmdr7y.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140179/sit_hefmum.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140181/sit3_gce4lc.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140183/sit4_btacbz.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140179/sit5_stssrp.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140179/sit6_rtrqs6.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140179/sit7_wakqmt.jpg"
   ],
   "content2": "Brothers & Sisters Kick-off 2025 đánh dấu khởi đầu cho hành trình phát triển bản thân của mỗi thành viên, đồng thời lan tỏa mô hình 'sinh viên giúp sinh viên' tinh thần đặc trưng của đại gia đình. Kick-off thể hiện tinh thần sẵn sàng chăm sóc, hỗ trợ và hướng dẫn các tân sinh viên, giúp các bạn nhanh chóng hòa nhập, tự tin và vững bước trên con đường đại học. Đây chính là nền tảng để xây dựng một cộng đồng đoàn kết, sẻ chia và luôn đồng hành cùng nhau trong mọi thử thách.",
   "carousel3": [
-    "/kick-off/perform.jpg",
-    "/kick-off/perform1.jpg",
-    "/kick-off/perform2.jpg",
-    "/kick-off/perform3.jpg",
-    "/kick-off/perform4.jpg",
-    "/kick-off/perform6.jpg",
-    "/kick-off/perform8.jpg",
-    "/kick-off/prj.jpg",
-    "/kick-off/stand.jpg",
-    "/kick-off/stand1.jpg"
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140177/perform_lymm6m.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140176/perform1_rcmh89.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140183/perform2_ntcp2j.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140186/perform3_x2ezgy.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140183/perform4_cikds0.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140178/perform6_rkmd8z.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140181/perform8_qmeqnh.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140186/prj_mvqodb.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140180/stand_lonjkl.jpg",
+    "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764140176/stand1_tnrrdr.jpg"
   ]
 }

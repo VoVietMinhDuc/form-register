@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   output: "standalone",
   images: {
     qualities: [100, 70, 75, 85],
+    domains: ["res.cloudinary.com"], // Thêm dòng này
   },
 };
 
