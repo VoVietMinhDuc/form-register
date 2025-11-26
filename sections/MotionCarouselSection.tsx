@@ -10,7 +10,8 @@ const libraries = [
     name: "Framer Motion",
     detail: "Hero reveal · staggered choreography · kinetic CTA",
     accent: "rgba(255,0,0,0.45)",
-    image: "/rise-space-01/full.png",
+    image:
+      "https://res.cloudinary.com/dmgq6kgdt/image/upload/v1764151246/full_xgracj.png",
   },
   {
     name: "Lenis Smooth",
