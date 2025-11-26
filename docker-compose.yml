@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: risespace
     ports:
-      - "3307:3306"
+      - "3307:3307"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -38,6 +38,7 @@ services:
 
 volumes:
   mysql_data:
+
 
 networks:
   default:
