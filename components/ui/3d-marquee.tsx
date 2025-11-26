@@ -54,9 +54,11 @@ export function ThreeDMarquee({ images, className }: ThreeDMarqueeProps) {
       {columnImages.map((column, colIndex) => {
         // Tăng thời gian chạy (chậm hơn) trên mobile / tablet
         const baseSpeed =
-          columns === 1 ? 90 : // mobile: rất chậm
-            columns === 2 ? 70 : // tablet
-              50; // desktop
+          columns === 1
+            ? 90 // mobile: rất chậm
+            : columns === 2
+            ? 70 // tablet
+            : 50; // desktop
 
         return (
           <MarqueeColumn
@@ -79,7 +81,12 @@ interface MarqueeColumnProps {
   columnIndex: number;
 }
 
-function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnProps) {
+function MarqueeColumn({
+  images,
+  direction,
+  speed,
+  columnIndex,
+}: MarqueeColumnProps) {
   const columnRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<Animation | null>(null);
   const [isClient, setIsClient] = useState(false);
@@ -100,7 +107,7 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
       if (!firstItem) return;
 
       // Đợi ảnh load xong - kiểm tra tất cả ảnh trong cột đầu tiên
-      const images = firstItem.querySelectorAll('img');
+      const images = firstItem.querySelectorAll("img");
       let loadedCount = 0;
       const totalImages = images.length;
 
@@ -111,7 +118,10 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
 
       const checkAllLoaded = () => {
         loadedCount++;
-        if (loadedCount >= totalImages || Array.from(images).every(img => img.complete)) {
+        if (
+          loadedCount >= totalImages ||
+          Array.from(images).every((img) => img.complete)
+        ) {
           startAnimation();
         }
       };
@@ -148,14 +158,13 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
       // Set chiều cao cho column để có đủ không gian
       column.style.height = `${totalHeight * 2}px`;
 
-      const startTransform = direction === "up" ? "translateY(0)" : `translateY(-${totalHeight}px)`;
-      const endTransform = direction === "up" ? `translateY(-${totalHeight}px)` : "translateY(0)";
+      const startTransform =
+        direction === "up" ? "translateY(0)" : `translateY(-${totalHeight}px)`;
+      const endTransform =
+        direction === "up" ? `translateY(-${totalHeight}px)` : "translateY(0)";
 
       const animation = column.animate(
-        [
-          { transform: startTransform },
-          { transform: endTransform },
-        ],
+        [{ transform: startTransform }, { transform: endTransform }],
         {
           duration: speed * 1000,
           iterations: Infinity,
@@ -201,7 +210,7 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
         {duplicatedImages.map((img, index) => (
           <div
             key={`${columnIndex}-${index}`}
-            className="relative flex-shrink-0 aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/10 bg-black/20 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-[#ff6b00]/50"
+            className="relative flex-shrink-0 aspect-square w-full max-w-[280px] sm:max-w-[190px] lg:max-w-[240px] mx-auto overflow-hidden rounded-lg border border-white/10 bg-black/20 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-[#ff6b00]/50"
             style={{
               minHeight: "200px",
               height: "auto",
@@ -240,7 +249,7 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
         return (
           <div
             key={`${columnIndex}-${index}`}
-            className="relative flex-shrink-0 aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/10 bg-black/20 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-[#ff6b00]/50"
+            className="relative flex-shrink-0 aspect-square w-full max-w-[280px] sm:max-w-[190px] lg:max-w-[240px] mx-auto overflow-hidden rounded-lg border border-white/10 bg-black/20 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-[#ff6b00]/50"
             style={{
               transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
               transformStyle: "preserve-3d",
@@ -271,5 +280,3 @@ function MarqueeColumn({ images, direction, speed, columnIndex }: MarqueeColumnP
     </div>
   );
 }
-
-

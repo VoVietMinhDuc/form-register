@@ -122,11 +122,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Thông Tin Sự Kiện",
       isInfoOnly: true,
-      content: `Chào mừng bạn đến với dự án RISE SPACE! 
-      
-Đây là một chương trình hỗ trợ tân sinh viên phát triển kỹ năng ngoại ngữ cơ bản, giúp các bạn tự tin hơn trong hành trình học tập tại trường.
-
-Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn tất đăng ký.`,
+      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.`,
       fields: [],
     },
     {
@@ -250,8 +246,7 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
     >
   ) => {
     const { name, value } = e.target;
-    const formattedValue =
-      name === "studentId" ? value.toUpperCase() : value;
+    const formattedValue = name === "studentId" ? value.toUpperCase() : value;
     setFormData({
       ...formData,
       [name]: formattedValue,
@@ -336,16 +331,16 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
             {steps.map((step, index) => (
               <div key={index} className="flex-1">
                 <div
-                  className={`h-2 rounded-full transition-all ${index <= currentStep
-                    ? "bg-gradient-to-r from-[#ff0000] via-[#ff6b00] to-[#ffd86b] shadow-[0_0_10px_rgba(255,107,0,0.5)]"
-                    : "bg-white/10"
-                    }`}
+                  className={`h-2 rounded-full transition-all ${
+                    index <= currentStep
+                      ? "bg-gradient-to-r from-[#ff0000] via-[#ff6b00] to-[#ffd86b] shadow-[0_0_10px_rgba(255,107,0,0.5)]"
+                      : "bg-white/10"
+                  }`}
                 />
                 <p
-                  className={`text-xs mt-2 font-medium text-center transition-colors ${index <= currentStep
-                    ? "text-[#ff6b00]"
-                    : "text-white/40"
-                    }`}
+                  className={`text-xs mt-2 font-medium text-center transition-colors ${
+                    index <= currentStep ? "text-[#ff6b00]" : "text-white/40"
+                  }`}
                 >
                   {step.title}
                 </p>
@@ -417,12 +412,13 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                             return (
                               <label
                                 key={option}
-                                className={`flex flex-col gap-2 p-4 border rounded-lg cursor-pointer transition-all backdrop-blur-sm ${errors[field.name]
-                                  ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 bg-[#ff0000]/10"
-                                  : isSelected
+                                className={`flex flex-col gap-2 p-4 border rounded-lg cursor-pointer transition-all backdrop-blur-sm ${
+                                  errors[field.name]
+                                    ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 bg-[#ff0000]/10"
+                                    : isSelected
                                     ? "border-[#ff6b00] bg-[#ff6b00]/10 ring-2 ring-[#ff6b00]/30"
                                     : "border-white/20 bg-white/5 hover:bg-white/10 hover:border-[#ff6b00]/50"
-                                  }`}
+                                }`}
                               >
                                 <div className="flex items-center gap-3">
                                   <input
@@ -461,14 +457,21 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                           value={formData[field.name as keyof typeof formData]}
                           onChange={handleChange}
                           required={field.required}
-                          className={`w-full px-4 py-3 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${errors[field.name]
-                            ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
-                            : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
-                            }`}
+                          className={`w-full px-4 py-3 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${
+                            errors[field.name]
+                              ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
+                              : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
+                          }`}
                         >
-                          <option value="" className="bg-[#111111] text-white">-- Vui lòng chọn --</option>
+                          <option value="" className="bg-[#111111] text-white">
+                            -- Vui lòng chọn --
+                          </option>
                           {field.options?.map((option: string) => (
-                            <option key={option} value={option} className="bg-[#111111] text-white">
+                            <option
+                              key={option}
+                              value={option}
+                              className="bg-[#111111] text-white"
+                            >
                               {option}
                             </option>
                           ))}
@@ -492,13 +495,16 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                             required={field.required}
                             rows={4}
                             maxLength={field.maxLength}
-                            className={`w-full ${field.name === "goal" || field.name === "expectation"
-                              ? "px-5 py-4 pb-10"
-                              : "px-4 py-3 pb-8"
-                              } text-base border rounded-lg focus:ring-2 focus:outline-none transition-all resize-none bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${errors[field.name]
+                            className={`w-full ${
+                              field.name === "goal" ||
+                              field.name === "expectation"
+                                ? "px-5 py-4 pb-10"
+                                : "px-4 py-3 pb-8"
+                            } text-base border rounded-lg focus:ring-2 focus:outline-none transition-all resize-none bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${
+                              errors[field.name]
                                 ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
                                 : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
-                              }`}
+                            }`}
                             placeholder={
                               field.placeholder ||
                               `Nhập ${field.label.toLowerCase()}`
@@ -509,7 +515,7 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                               {
                                 (
                                   formData[
-                                  field.name as keyof typeof formData
+                                    field.name as keyof typeof formData
                                   ] as string
                                 ).length
                               }
@@ -532,10 +538,11 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                           value={formData[field.name as keyof typeof formData]}
                           onChange={handleChange}
                           required={field.required}
-                          className={`w-full px-4 py-3 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${errors[field.name]
-                            ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
-                            : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
-                            }`}
+                          className={`w-full px-4 py-3 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${
+                            errors[field.name]
+                              ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 focus:ring-[#ff0000] focus:border-[#ff0000]"
+                              : "border-white/20 focus:ring-[#ff6b00] focus:border-[#ff6b00]"
+                          }`}
                           placeholder={
                             field.placeholder ||
                             `Nhập ${field.label.toLowerCase()}`
