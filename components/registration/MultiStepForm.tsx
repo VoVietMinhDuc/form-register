@@ -181,10 +181,18 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
       fields: [
         {
           name: "major",
-          label: "Chọn chuyên ngành phù hợp",
+          label: "Chọn lớp bạn muốn đăng ký",
           type: "radio",
           required: true,
-          options: ["Tiếng Anh", "Tiếng Nhật", "Tiếng Trung"],
+          options: [
+            "C Programming Basics",
+            "Python Programming Basics",
+            "The Art of Visual Narrative",
+            "Art & Design Tools",
+            "Soft Skills",
+            "Japanese",
+            "Chinese",
+          ],
         },
       ],
     },
@@ -384,34 +392,60 @@ Hãy điền đầy đủ thông tin trong các bước tiếp theo để hoàn 
                     {field.type === "radio" ? (
                       <>
                         <div className="space-y-3">
-                          {field.options?.map((option: string) => (
-                            <label
-                              key={option}
-                              className={`flex items-center gap-3 p-4 border rounded-lg cursor-pointer transition-all backdrop-blur-sm ${errors[field.name]
-                                ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 bg-[#ff0000]/10"
-                                : formData[field.name as keyof typeof formData] === option
-                                  ? "border-[#ff6b00] bg-[#ff6b00]/10 ring-2 ring-[#ff6b00]/30"
-                                  : "border-white/20 bg-white/5 hover:bg-white/10 hover:border-[#ff6b00]/50"
-                                }`}
-                            >
-                              <input
-                                type="radio"
-                                name={field.name}
-                                value={option}
-                                checked={
-                                  formData[
-                                  field.name as keyof typeof formData
-                                  ] === option
-                                }
-                                onChange={handleChange}
-                                required={field.required}
-                                className="w-5 h-5 text-[#ff6b00] focus:ring-[#ff6b00] accent-[#ff6b00]"
-                              />
-                              <span className="text-base text-white/90 font-medium">
-                                {option}
-                              </span>
-                            </label>
-                          ))}
+                          {field.options?.map((option: string) => {
+                            const descriptions: Record<string, string> = {
+                              "C Programming Basics":
+                                "Phù hợp với nhóm ngành KTPM (SE), Vi mạch bán dẫn (IC), Hệ thống thông tin (IS), Công nghệ ô tô số (AS)",
+                              "Python Programming Basics":
+                                "Phù hợp với nhóm ngành Trí tuệ nhân tạo (AI), Chuyển đối số (DX), An toàn thông tin (IA)",
+                              "The Art of Visual Narrative":
+                                "Phù hợp với nhóm ngành Thiết kế mỹ thuật số (GD) và người có đam mê mỹ thuật",
+                              "Art & Design Tools":
+                                "Phù hợp với nhóm ngành Truyền Thông đa phương tiện (MC) và người đã biết vẽ tay",
+                              "Soft Skills":
+                                "Là kiến thức bắt buộc có với mọi ngành thuộc trường ĐH FPT. Soft skills giúp sinh viên phát triển các kỹ năng nền tảng như giao tiếp, làm việc nhóm, tư duy phản biện, quản lý thời gian và thuyết trình — những kỹ năng quan trọng trong học tập và môi trường làm việc thực tế.",
+                              Japanese:
+                                "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành KTPM (SE), Hệ thống thông tin (IS), Công nghệ ô tô số (AS), Thiết kế mỹ thuật số (GD), Trí tuệ nhân tạo (AI), Chuyển đối số (DX), An toàn thông tin (IA)",
+                              Chinese:
+                                "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
+                            };
+
+                            const isSelected =
+                              formData[field.name as keyof typeof formData] ===
+                              option;
+
+                            return (
+                              <label
+                                key={option}
+                                className={`flex flex-col gap-2 p-4 border rounded-lg cursor-pointer transition-all backdrop-blur-sm ${errors[field.name]
+                                  ? "border-[#ff0000] ring-2 ring-[#ff0000]/30 bg-[#ff0000]/10"
+                                  : isSelected
+                                    ? "border-[#ff6b00] bg-[#ff6b00]/10 ring-2 ring-[#ff6b00]/30"
+                                    : "border-white/20 bg-white/5 hover:bg-white/10 hover:border-[#ff6b00]/50"
+                                  }`}
+                              >
+                                <div className="flex items-center gap-3">
+                                  <input
+                                    type="radio"
+                                    name={field.name}
+                                    value={option}
+                                    checked={isSelected}
+                                    onChange={handleChange}
+                                    required={field.required}
+                                    className="w-5 h-5 text-[#ff6b00] focus:ring-[#ff6b00] accent-[#ff6b00]"
+                                  />
+                                  <span className="text-base text-white/90 font-semibold">
+                                    {option}
+                                  </span>
+                                </div>
+                                {isSelected && descriptions[option] && (
+                                  <p className="pl-8 text-sm text-white/80 leading-relaxed">
+                                    {descriptions[option]}
+                                  </p>
+                                )}
+                              </label>
+                            );
+                          })}
                         </div>
                         {errors[field.name] && (
                           <p className="mt-2 text-sm text-[#ff6b00] font-medium">

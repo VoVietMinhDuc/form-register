@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -11,18 +11,32 @@ interface ThreeDMarqueeProps {
 
 export function ThreeDMarquee({ images, className }: ThreeDMarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [columns, setColumns] = useState(4);
 
-  // Chia images thành 4 cột
-  const columns = 4;
-  const columnImages: string[][] = [];
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setColumns(1);
+      } else if (width < 1024) {
+        setColumns(2);
+      } else {
+        setColumns(4);
+      }
+    };
 
-  for (let i = 0; i < columns; i++) {
-    columnImages.push([]);
-  }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  images.forEach((img, index) => {
-    columnImages[index % columns].push(img);
-  });
+  const columnImages = useMemo(() => {
+    const buckets: string[][] = Array.from({ length: columns }, () => []);
+    images.forEach((img, index) => {
+      buckets[index % columns].push(img);
+    });
+    return buckets;
+  }, [columns, images]);
 
   if (!images || images.length === 0) {
     return null;
@@ -31,24 +45,29 @@ export function ThreeDMarquee({ images, className }: ThreeDMarqueeProps) {
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "relative flex h-full w-full gap-4",
-        className
-      )}
+      className={cn("relative flex h-full w-full gap-4", className)}
       style={{
         perspective: "1000px",
         overflow: "hidden",
       }}
     >
-      {columnImages.map((column, colIndex) => (
-        <MarqueeColumn
-          key={colIndex}
-          images={column}
-          direction={colIndex % 2 === 0 ? "up" : "down"}
-          speed={30 + colIndex * 5} // ⚡ TỐC ĐỘ: Số càng lớn = chạy càng chậm (đơn vị: giây)
-          columnIndex={colIndex}
-        />
-      ))}
+      {columnImages.map((column, colIndex) => {
+        // Tăng thời gian chạy (chậm hơn) trên mobile / tablet
+        const baseSpeed =
+          columns === 1 ? 90 : // mobile: rất chậm
+            columns === 2 ? 70 : // tablet
+              50; // desktop
+
+        return (
+          <MarqueeColumn
+            key={`${columns}-${colIndex}`}
+            images={column}
+            direction={colIndex % 2 === 0 ? "up" : "down"}
+            speed={baseSpeed + colIndex * 5} // ⚡ TỐC ĐỘ: Số càng lớn = chạy càng chậm (đơn vị: giây)
+            columnIndex={colIndex}
+          />
+        );
+      })}
     </div>
   );
 }

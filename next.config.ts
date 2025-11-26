@@ -1,12 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
   output: "standalone",
   images: {
-    qualities: [100, 70, 75, 85],
-    domains: ["res.cloudinary.com"], // Thêm dòng này
+    /** 
+     * Tắt Next Image Optimizer để tránh lỗi 500 ở route /_next/image
+     * (dùng trực tiếp link Cloudinary, phù hợp cho landing hiện tại)
+     */
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
   },
 };
 
