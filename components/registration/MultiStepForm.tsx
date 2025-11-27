@@ -130,7 +130,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Lịch Học",
       isInfoOnly: true,
-      content: `Lịch học các lớp:\n• C Programming Basics: 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n• Python Programming Basics: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• The Art of Visual Narrative: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• Chinese: 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n• Japanese: 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n• Art & Design Tools: 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n• Soft Skills: 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n• Business: TBA`,
+      content: `C Programming Basics\n    → 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n\nPython Programming Basics\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nThe Art of Visual Narrative\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nChinese\n    → 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n\nJapanese\n    → 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n\nArt & Design Tools\n    → 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n\nSoft Skills\n    → 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n\nBusiness\n    → TBA (Sẽ thông báo sau)`,
       fields: [],
     },
     {
@@ -192,10 +192,10 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
             "C Programming Basics",
             "Python Programming Basics",
             "The Art of Visual Narrative",
+            "Chinese",
+            "Japanese",
             "Art & Design Tools",
             "Soft Skills",
-            "Japanese",
-            "Chinese",
             "Business",
           ],
         },
@@ -407,11 +407,11 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                               "Art & Design Tools":
                                 "Phù hợp với nhóm ngành Truyền Thông đa phương tiện (MC) và người đã biết vẽ tay",
                               "Soft Skills":
-                                "Là kiến thức bắt buộc có với mọi ngành thuộc trường ĐH FPT. Soft skills giúp sinh viên phát triển các kỹ năng nền tảng như giao tiếp, làm việc nhóm, tư duy phản biện, quản lý thời gian và thuyết trình — những kỹ năng quan trọng trong học tập và môi trường làm việc thực tế.",
+                                "Phù hợp cho tất cả các ngành có ở Trường đại học FPT. Soft skills giúp sinh viên phát triển các kỹ năng nền tảng như giao tiếp, làm việc nhóm, tư duy phản biện, quản lý thời gian và thuyết trình — những kỹ năng quan trọng trong học tập và môi trường làm việc thực tế.",
                               Japanese:
-                                "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành KTPM (SE), Hệ thống thông tin (IS), Công nghệ ô tô số (AS), Thiết kế mỹ thuật số (GD), Trí tuệ nhân tạo (AI), Chuyển đối số (DX), An toàn thông tin (IA)",
+                                "Phù hợp khi theo chuyên ngành KTPM (SE), Hệ thống thông tin (IS), Công nghệ ô tô số (AS), Thiết kế mỹ thuật số (GD), Trí tuệ nhân tạo (AI), Chuyển đối số (DX), An toàn thông tin (IA)",
                               Chinese:
-                                "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
+                                "Phù hợp khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
                               Business:
                                 "Phù hợp với nhóm ngành Kinh tế (IB) và người có đam mê kinh doanh",
                             };
