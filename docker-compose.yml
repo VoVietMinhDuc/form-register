@@ -23,7 +23,7 @@ services:
     container_name: rise-space-frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3002:3000"
     environment:
       DATABASE_URL: "mysql://root:27112025@mysql:3306/risespace"
       NEXT_TELEMETRY_DISABLED: "1"
