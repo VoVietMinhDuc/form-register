@@ -3,6 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "standalone",
+  async rewrites() {
+    return [
+      {
+        source: "/images/:path*",
+        destination: "http://143.198.84.82:3001/images/:path*",
+      },
+    ];
+  },
   images: {
     unoptimized: true,
     formats: ["image/avif", "image/webp"],
@@ -18,7 +26,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "http",
         hostname: "143.198.84.82",
-        port: "3002",
+        port: "3001",
         pathname: "/images/**",
       },
     ],
