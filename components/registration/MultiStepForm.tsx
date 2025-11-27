@@ -122,7 +122,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Thông Tin Sự Kiện",
       isInfoOnly: true,
-      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.`,
+      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.\n\nLịch học các lớp:\n• Japanese: 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n• Chinese: 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n• Python Programming Basics: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• The Art of Visual Narrative: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• Art & Design Tools: 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n• Soft Skills: 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n• C Programming Basics: 3/12 - 5/12 - 10/12 - 11/12 - 12/12`,
       fields: [],
     },
     {
