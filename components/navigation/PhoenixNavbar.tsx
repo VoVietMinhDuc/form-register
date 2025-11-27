@@ -64,7 +64,7 @@ export function PhoenixNavbar() {
         <Button
           size="sm"
           asChild
-          className="fire-border hidden rounded-full bg-gradient-to-r from-[#ff2222] via-[#ff6b00] to-[#ffd050] text-black shadow-[0_0_20px_rgba(255,91,15,0.6)] tracking-tight md:inline-flex"
+          className="fire-border rounded-full bg-linear-to-r from-[#ff2222] via-[#ff6b00] to-[#ffd050] text-black shadow-[0_0_20px_rgba(255,91,15,0.6)] text-[9px] px-2 py-1 md:text-xs md:px-4 md:py-2 whitespace-nowrap tracking-[0.05em] md:tracking-tight"
         >
           <Link href="/registration">Đăng kí Rise Space</Link>
         </Button>
