@@ -54,6 +54,43 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // Helper function to render schedule with bold course names
+  const renderScheduleContent = (content: string) => {
+    const lines = content.split("\n");
+    return lines.map((line, index) => {
+      // Check if line contains course name (lines with time in parentheses)
+      if (line.includes("(18h00 - 20h00)")) {
+        return (
+          <div key={index} className="mb-2 md:mb-3">
+            <p className="text-white font-bold text-sm md:text-base">{line}</p>
+          </div>
+        );
+      }
+      // Date lines (starting with →)
+      if (line.trim().startsWith("→")) {
+        return (
+          <p
+            key={index}
+            className="text-white/80 text-xs md:text-sm ml-2 md:ml-4 mb-3 md:mb-4"
+          >
+            {line}
+          </p>
+        );
+      }
+      // Other lines
+      return line.trim() ? (
+        <p
+          key={index}
+          className="text-white/90 leading-relaxed text-sm md:text-base"
+        >
+          {line}
+        </p>
+      ) : (
+        <div key={index} className="h-1 md:h-2" />
+      );
+    });
+  };
+
   // Validation schemas for each step
   const validationSchemas = [
     // Step 0: Info only - no validation
@@ -83,7 +120,11 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
         .string()
         .min(1, "Vui lòng nhập link Facebook")
         .max(200, "Link Facebook không được vượt quá 200 ký tự")
-        .url("Link không hợp lệ"),
+        .url("Link không hợp lệ")
+        .refine(
+          (url) => url.toLowerCase().includes("facebook"),
+          "Link phải là link Facebook hợp lệ"
+        ),
       house: z.string().min(1, "Vui lòng chọn nhà"),
     }),
     // Step 3: Major
@@ -130,7 +171,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Lịch Học",
       isInfoOnly: true,
-      content: `C Programming Basics\n    → 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n\nPython Programming Basics\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nThe Art of Visual Narrative\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nChinese\n    → 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n\nJapanese\n    → 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n\nArt & Design Tools\n    → 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n\nSoft Skills\n    → 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n\nBusiness\n    → TBA (Sẽ thông báo sau)`,
+      content: `C Programming Basics (18h00 - 20h00)\n    → 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n\nPython Programming Basics (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nThe Art of Visual Narrative (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nChinese (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n\nJapanese (18h00 - 20h00)\n    → 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n\nArt & Design Tools (18h00 - 20h00)\n    → 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n\nSoft Skills (18h00 - 20h00)\n    → 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n\nBusiness (18h00 - 20h00)\n    → 5/12 - 6/12 - 8/12 - 10/12 - 11/12`,
       fields: [],
     },
     {
@@ -346,11 +387,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                       : "bg-white/10"
                   }`}
                 />
-                <p
-                  className={`text-xs mt-2 font-medium text-center transition-colors ${
-                    index <= currentStep ? "text-[#ff6b00]" : "text-white/40"
-                  }`}
-                >
+                <p className="text-xs mt-2 font-medium text-center text-white/60 hidden md:block">
                   {step.title}
                 </p>
               </div>
@@ -375,9 +412,15 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
             {/* Info Only Section */}
             {currentStepData.isInfoOnly ? (
               <div className="bg-gradient-to-r from-[#ff0000]/10 via-[#ff6b00]/10 to-[#ffd86b]/10 border-l-4 border-[#ff6b00] p-6 rounded-lg backdrop-blur-sm">
-                <p className="text-white/90 leading-relaxed whitespace-pre-line font-medium">
-                  {currentStepData.content}
-                </p>
+                {currentStepData.title === "Lịch Học" ? (
+                  <div>
+                    {renderScheduleContent(currentStepData.content || "")}
+                  </div>
+                ) : (
+                  <p className="text-white/90 leading-relaxed whitespace-pre-line font-medium">
+                    {currentStepData.content}
+                  </p>
+                )}
               </div>
             ) : (
               <div className="space-y-6">
@@ -413,7 +456,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                               Chinese:
                                 "Phù hợp khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
                               Business:
-                                "Phù hợp với nhóm ngành Kinh tế (IB) và người có đam mê kinh doanh",
+                                "Phù hợp với nhóm ngành Kinh tế (IB), Digital Marketing (MKT) và người có đam mê kinh doanh",
                             };
 
                             const isSelected =
@@ -441,7 +484,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                                     required={field.required}
                                     className="w-5 h-5 text-[#ff6b00] focus:ring-[#ff6b00] accent-[#ff6b00]"
                                   />
-                                  <span className="text-base text-white/90 font-semibold">
+                                  <span className="text-base text-white/90 font-bold">
                                     {option}
                                   </span>
                                 </div>
