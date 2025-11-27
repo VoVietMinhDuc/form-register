@@ -1,15 +1,13 @@
-version: "3.8"
-
 services:
   mysql:
     image: mysql:8.0
     container_name: rise-space-mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 27112025
       MYSQL_DATABASE: risespace
     ports:
-      - "3307:3307"
+      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -24,24 +22,20 @@ services:
     image: rise-space-frontend:latest
     container_name: rise-space-frontend
     restart: unless-stopped
-    expose:
-      - "3000"
+    ports:
+      - "3000:3000"
     environment:
-      DATABASE_URL: "mysql://root:123456@mysql:3306/risespace"
+      DATABASE_URL: "mysql://root:27112025@mysql:3306/risespace"
       NEXT_TELEMETRY_DISABLED: "1"
       PORT: "3000"
     depends_on:
       - mysql
     networks:
       - default
-      - proxy_net
 
 volumes:
   mysql_data:
 
-
 networks:
   default:
-  proxy_net:
-    external: true
-    name: global_proxy_net
+    driver: bridge
