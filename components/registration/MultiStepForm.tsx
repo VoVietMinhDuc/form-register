@@ -58,7 +58,9 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
   const validationSchemas = [
     // Step 0: Info only - no validation
     z.object({}),
-    // Step 1: Personal Information
+    // Step 1: Lịch học - Info only - no validation
+    z.object({}),
+    // Step 2: Personal Information
     z.object({
       fullName: z
         .string()
@@ -84,17 +86,17 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
         .url("Link không hợp lệ"),
       house: z.string().min(1, "Vui lòng chọn nhà"),
     }),
-    // Step 2: Major
+    // Step 3: Major
     z.object({
       major: z
         .string()
         .min(1, "Vui lòng chọn chuyên ngành bạn muốn tham gia trải nghiệm"),
     }),
-    // Step 3: Experience
+    // Step 4: Experience
     z.object({
       experience: z.string().min(1, "Vui lòng không để trống"),
     }),
-    // Step 4: Goals and Expectations
+    // Step 5: Goals and Expectations
     z.object({
       goal: z
         .string()
@@ -105,7 +107,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
         .min(1, "Vui lòng nhập kỳ vọng")
         .max(250, "Kỳ vọng không được vượt quá 250 ký tự"),
     }),
-    // Step 5: Confirmation
+    // Step 6: Confirmation
     z.object({
       confirmation: z.string().min(1, "Vui lòng xác nhận thông tin"),
     }),
@@ -122,7 +124,13 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Thông Tin Sự Kiện",
       isInfoOnly: true,
-      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.\n\nLịch học các lớp:\n• Japanese: 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n• Chinese: 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n• Python Programming Basics: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• The Art of Visual Narrative: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• Art & Design Tools: 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n• Soft Skills: 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n• C Programming Basics: 3/12 - 5/12 - 10/12 - 11/12 - 12/12`,
+      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.`,
+      fields: [],
+    },
+    {
+      title: "Lịch Học",
+      isInfoOnly: true,
+      content: `Lịch học các lớp:\n• C Programming Basics: 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n• Python Programming Basics: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• The Art of Visual Narrative: 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n• Chinese: 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n• Japanese: 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n• Art & Design Tools: 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n• Soft Skills: 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n• Business: TBA`,
       fields: [],
     },
     {
@@ -137,7 +145,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
         },
         {
           name: "studentId",
-          label: "MSSV của bạn là? (VD: SE210210)",
+          label: "MSSV của bạn là?",
           type: "text",
           required: true,
           placeholder: "SE210210",
@@ -188,6 +196,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
             "Soft Skills",
             "Japanese",
             "Chinese",
+            "Business",
           ],
         },
       ],
@@ -403,6 +412,8 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                                 "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành KTPM (SE), Hệ thống thông tin (IS), Công nghệ ô tô số (AS), Thiết kế mỹ thuật số (GD), Trí tuệ nhân tạo (AI), Chuyển đối số (DX), An toàn thông tin (IA)",
                               Chinese:
                                 "Là ngôn ngữ chắc chắn được tiếp xúc khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
+                              Business:
+                                "Phù hợp với nhóm ngành Kinh tế (IB) và người có đam mê kinh doanh",
                             };
 
                             const isSelected =

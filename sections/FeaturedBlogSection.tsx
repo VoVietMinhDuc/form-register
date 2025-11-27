@@ -54,7 +54,7 @@ export function FeaturedBlogSection() {
           variants={fadeUp(0.1)}
           className="mt-4 text-3xl font-bold leading-tight text-white md:text-5xl"
         >
-          <GradientText className="pt-2">BÀI VIẾT NỔI BẬT</GradientText>
+          <GradientText className="pt-4">BÀI VIẾT NỔI BẬT</GradientText>
         </motion.h2>
         <motion.p
           variants={fadeUp(0.15)}

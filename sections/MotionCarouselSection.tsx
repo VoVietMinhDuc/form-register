@@ -123,8 +123,8 @@ export function MotionCarouselSection() {
         <p className="text-sm uppercase tracking-[0.5em] text-white/60">
           RISE SPACE
         </p>
-        <h2 className="text-3xl font-extrabold text-white md:text-5xl">
-          <GradientText className="pt-2">KHÔNG GIAN ĐỂ VƯƠN MÌNH</GradientText>
+        <h2 className="text-3xl font-extrabold text-white md:text-5xl ">
+          <GradientText className="pt-4">KHÔNG GIAN ĐỂ VƯƠN MÌNH</GradientText>
         </h2>
         <p className="mx-auto max-w-3xl text-base text-white/75">
           SÂN CHƠI HỌC THUẬT TOP ĐẦU DÀNH CHO TÂN SINH VIÊN FPTU HCM
