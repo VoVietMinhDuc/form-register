@@ -456,7 +456,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                               Chinese:
                                 "Phù hợp khi theo chuyên ngành Vi mạch bán dẫn (IC), Khối ngành Kinh tế (IB), Khối ngành Truyền thông (MC)",
                               Business:
-                                "Phù hợp với nhóm ngành Kinh tế (IB), Digital Marketing (MKT) và người có đam mê kinh doanh",
+                                "Phù hợp với nhóm ngành Kinh tế nơi chia sẻ các góc nhìn về ngành và các chuyên ngành hẹp chuyên sâu",
                             };
 
                             const isSelected =
