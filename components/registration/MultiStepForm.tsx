@@ -165,13 +165,13 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     {
       title: "Thông Tin Sự Kiện",
       isInfoOnly: true,
-      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.`,
+      content: `Dự án RISE SPACE hỗ trợ tân sinh viên tiếp cận kiến thức nền tảng của các khối ngành, giúp bạn xây dựng định hướng phát triển cá nhân ngay từ những ngày đầu đại học.\n\nNội dung chương trình tập trung vào các kiến thức CƠ BẢN NHẤT của từng ngành, phù hợp cho người mới bắt đầu.\n\nĐịa điểm: Trường Đại học FPT\n\nKết quả mong đợi:\n• Nắm vững các khái niệm nền tảng để tiếp tục phát triển kỹ năng chuyên ngành.\n• Được hỗ trợ và nâng cao khả năng tự học, chủ động khám phá tri thức.`,
       fields: [],
     },
     {
       title: "Lịch Học",
       isInfoOnly: true,
-      content: `C Programming Basics (18h00 - 20h00)\n    → 3/12 - 5/12 - 10/12 - 11/12 - 12/12\n\nPython Programming Basics (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nThe Art of Visual Narrative (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 12/12\n\nChinese (18h00 - 20h00)\n    → 3/12 - 5/12 - 8/12 - 10/12 - 13/12\n\nJapanese (18h00 - 20h00)\n    → 3/12 - 6/12 - 8/12 - 10/12 - 12/12\n\nArt & Design Tools (18h00 - 20h00)\n    → 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n\nSoft Skills (18h00 - 20h00)\n    → 5/12 - 8/12 - 10/12 - 11/12 - 12/12\n\nBusiness (18h00 - 20h00)\n    → 5/12 - 6/12 - 8/12 - 10/12 - 11/12`,
+      content: `C Programming Basics (18h00 - 20h00)\n    → 11/12 - 15/12 - 17/12 - 18/12 - 19/12\n\nPython Programming Basics (18h00 - 20h00)\n    → 15/12 - 16/12 - 17/12 - 18/12 - 19/12\n\nThe Art of Visual Narrative (18h00 - 20h00)\n    → 8/12 - 10/12 - 12/12 - 13/12 - 15/12\n\nChinese (18h00 - 20h00)\n    → 8/12 - 10/12 - 13/12 - 15/12 - 16/12\n\nJapanese (18h00 - 20h00)\n    → 8/12 - 10/12 - 12/12 - 13/12 - 15/12\n\nArt & Design Tools (18h00 - 20h00)\n    → 8/12 - 10/12 - 12/12 - 13/12 - 15/12\n\nSoft Skills (18h00 - 20h00)\n    → 8/12 - 10/12 - 11/12 - 12/12 - 13/12\n\nBusiness (18h00 - 20h00)\n    → 8/12 - 10/12 - 11/12 - 16/12 - 17/12`,
       fields: [],
     },
     {
