@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -102,7 +103,7 @@ const RegistrationModal = ({ isOpen, onClose }: RegistrationModalProps) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     // Xử lý submit form ở đây
-    alert("Đăng ký thành công!");
+    toast.success("Đăng ký thành công!");
     onClose();
     setCurrentStep(0);
   };

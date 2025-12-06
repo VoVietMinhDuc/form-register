@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 "use client";
 
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214
 import Image from "next/image";
 
 interface NormalCarouselProps {

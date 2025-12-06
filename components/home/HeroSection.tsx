@@ -1,9 +1,14 @@
 "use client";
 
-import BackgroundSlider from "./client/BackgroundSlider";
 import Link from "next/link";
+<<<<<<<< HEAD:components/home/HeroSection.tsx
+========
 import { Button } from "@/components/ui/button";
+>>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214:components/HomeSection.tsx
 import { motion } from "framer-motion";
+
+import BackgroundSlider from "@/components/shared/BackgroundSlider";
+import Button from "@/components/ui/button";
 
 const images = ["/phoenix.jpg", "/phoenix1.jpg", "/phoenix2.jpg"];
 

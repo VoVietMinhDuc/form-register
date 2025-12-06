@@ -35,7 +35,7 @@ const BackgroundSlider = ({
           }`}
         />
       ))}
-      <div className="absolute inset-0 bg-orange-500/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#ff0000]/20 via-[#ff6b00]/15 to-[#050505]/80" />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { GiFireBowl } from "react-icons/gi";
 import { FaFire } from "react-icons/fa";
 
 interface LoadingScreenProps {
@@ -16,7 +15,7 @@ const LoadingScreen = ({ showSuccess = false }: LoadingScreenProps) => {
   }));
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-linear-to-br from-orange-50 via-white to-red-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
       <div className="relative w-full h-full flex items-center justify-center">
         <div className="relative w-64 h-64 flex items-center justify-center">
           {/* Fire particles */}

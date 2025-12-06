@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
+<<<<<<<< HEAD:components/registration/RegistrationButton.tsx
+
+import Button from "@/components/ui/button";
+
+========
 import { Button } from "@/components/ui/button"; // Dùng button của shadcn/ui
+>>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214:components/RegistrationButton.tsx
 import RegistrationModal from "./RegistrationModal";
 
 const RegistrationButton = () => {

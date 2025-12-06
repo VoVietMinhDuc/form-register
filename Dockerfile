@@ -4,7 +4,8 @@ WORKDIR /app
 
 # Install dependencies based on package manager
 COPY package.json package-lock.json* ./
-RUN npm ci
+# === SỬA LỖI: Thêm --ignore-scripts để ngăn "prisma generate" chạy ở đây ===
+RUN npm ci --ignore-scripts
 
 # Stage 2: Builder
 FROM node:20-alpine AS builder
@@ -14,6 +15,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma Client
+# Lệnh này bây giờ sẽ chạy thành công vì nó ở Stage 2,
+# nơi đã copy toàn bộ code (bao gồm cả schema.prisma)
 RUN npx prisma generate
 
 # Build Next.js application

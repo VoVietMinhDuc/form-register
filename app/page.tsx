@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+export { default } from "./(marketing)/page";
+
+
+
+=======
 import { Separator } from "@/components/ui/separator";
 import HomeSection from "../components/HomeSection";
 import EventsShowcase from "../components/EventsShowcase";
@@ -37,3 +43,4 @@ export default function Home() {
     </div>
   );
 }
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214

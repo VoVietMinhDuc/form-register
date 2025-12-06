@@ -1,0 +1,16 @@
+import { getBlogBySlug } from "@/lib/blogs";
+import BlogClient from "./BlogClient";
+
+export default async function Page() {
+  const blog = await getBlogBySlug("phoenix-house-2025-kick-off");
+
+  if (!blog) {
+    return (
+      <main className="flex items-center justify-center min-h-screen text-white">
+        Không tìm thấy bài viết.
+      </main>
+    );
+  }
+
+  return <BlogClient blog={blog} />;
+}

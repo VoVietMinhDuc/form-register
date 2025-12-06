@@ -4,6 +4,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+<<<<<<< HEAD
+  --background: #050505;
+  --foreground: #f8f5f0;
+  --primary: #ff3b0d;
+  --primary-strong: #ff6b00;
+  --accent: #ffd86b;
+  --phoenix-black: #111111;
+  --phoenix-red: #ff0000;
+  --phoenix-orange: #ff6b00;
+  --phoenix-gold: #ffd86b;
+  --phoenix-ember: #8b2500;
+  --font-phoenix: var(--font-geist-sans);
+=======
   --primary: oklch(0.205 0 0);
   --primary-hover: #ea580c;
   --accent: oklch(0.97 0 0);
@@ -37,6 +50,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214
 }
 
 @theme inline {
@@ -44,8 +58,209 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
+  --color-border: rgba(255, 107, 0, 0.4);
+  --font-sans: var(--font-phoenix, var(--font-geist-sans));
   --font-mono: var(--font-geist-mono);
+<<<<<<< HEAD
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-phoenix), var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.15), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 107, 0, 0.2), transparent 45%),
+    linear-gradient(180deg, rgba(11, 11, 11, 0.95) 0%, rgba(5, 5, 5, 1) 100%);
+}
+
+::selection {
+  background: rgba(255, 0, 0, 0.35);
+  color: #fff9ed;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.phoenix-scroll {
+  scroll-snap-type: y proximity;
+}
+
+.phoenix-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Căn giữa section khi scroll đến */
+section[id] {
+  scroll-margin-top: calc(50vh - 100px);
+}
+
+.magicui-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+.magicui-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.3;
+  z-index: -2;
+}
+
+.magicui-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 107, 0, 0.13), transparent 55%);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.fire-gradient {
+  background-image: linear-gradient(120deg, var(--phoenix-red), var(--phoenix-gold), var(--phoenix-orange));
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.fire-border {
+  position: relative;
+}
+
+.fire-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(130deg, rgba(255, 0, 0, 0.5), rgba(255, 107, 0, 0.4), rgba(255, 216, 107, 0.3));
+  z-index: -1;
+  filter: blur(6px);
+}
+
+.glow {
+  box-shadow:
+    0 0 15px rgba(255, 59, 13, 0.5),
+    0 0 50px rgba(255, 107, 0, 0.35);
+}
+
+.phoenix-spotlight {
+  position: absolute;
+  inset: auto;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 59, 13, 0.65), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.shine-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.shine-parent:hover .shine-overlay {
+  opacity: 1;
+}
+
+.flame-orb {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 216, 107, 0.6), rgba(255, 59, 13, 0.25), transparent 70%);
+  filter: blur(10px);
+  mix-blend-mode: screen;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(10px, -30px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 3s ease-in-out infinite;
+}
+
+.bento-card {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(255, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.fire-grid-bg {
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+}
+
+.phoenix-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='rgba(0,0,0,0)'/%3E%3Ccircle cx='40' cy='30' r='1' fill='rgba(255,255,255,0.07)'/%3E%3Ccircle cx='120' cy='90' r='1' fill='rgba(255,255,255,0.07)'/%3E%3Ccircle cx='80' cy='140' r='1' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  pointer-events: none;
+=======
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -77,9 +292,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214
 }
 
-/* Prevent image download and right-click */
 img {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -89,7 +304,6 @@ img {
   -webkit-touch-callout: none;
 }
 
-/* Allow clicks on interactive elements */
 button,
 a,
 input,
@@ -98,6 +312,8 @@ textarea {
   pointer-events: auto;
   user-select: auto;
 }
+<<<<<<< HEAD
+=======
 
 .__next-dev-overlay button {
   display: none !important;
@@ -223,3 +439,4 @@ textarea {
     @apply bg-background text-foreground;
   }
 }
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214
