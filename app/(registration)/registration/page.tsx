@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD:app/(registration)/registration/page.tsx
+=======
+import MultiStepForm from "@/components/client/MultiStepForm";
+import BackgroundSlider from "@/components/client/BackgroundSlider";
+import LoadingScreen from "@/components/LoadingScreen";
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214:app/registration/page.tsx
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 

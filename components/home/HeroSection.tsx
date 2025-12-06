@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+<<<<<<<< HEAD:components/home/HeroSection.tsx
+========
+import { Button } from "@/components/ui/button";
+>>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214:components/HomeSection.tsx
 import { motion } from "framer-motion";
 
 import BackgroundSlider from "@/components/shared/BackgroundSlider";
@@ -8,11 +12,14 @@ import Button from "@/components/ui/button";
 
 const images = ["/phoenix.jpg", "/phoenix1.jpg", "/phoenix2.jpg"];
 
-const HeroSection = () => {
+const HomeSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <BackgroundSlider images={images} interval={5000} />
+      <div className="absolute inset-0 w-full h-full">
+        <BackgroundSlider images={images} interval={5000} />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
 
       {/* Content */}
       <motion.div
@@ -27,12 +34,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="text-white-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <span className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Warmly Welcome to Phoenix House
           </span>
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl mb-12 leading-tight max-w-3xl mx-auto text-white-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+          className="text-xl md:text-2xl mb-12 leading-tight max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -50,7 +57,7 @@ const HeroSection = () => {
           <Link href="/registration">
             <Button
               size="lg"
-              className="bg-linear-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-8 py-6 text-lg shadow-2xl transition-all"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-8 py-6 text-lg shadow-2xl transition-all"
             >
               Đăng Ký Ngay
             </Button>
@@ -68,4 +75,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeSection;

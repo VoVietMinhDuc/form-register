@@ -23,8 +23,12 @@ const beVietnam = Be_Vietnam_Pro({
 
 export const metadata: Metadata = {
   title: "Phoenix House",
+<<<<<<< HEAD
   description:
     "Landing page Phoenix House với tinh thần tái sinh, quyền năng và bùng nổ năng lượng.",
+=======
+  description: "Phoenix House Information",
+>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214
 };
 
 export default function RootLayout({

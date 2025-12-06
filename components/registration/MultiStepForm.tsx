@@ -67,7 +67,11 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
       studentId: z
         .string()
         .min(1, "Vui lòng nhập MSSV")
+<<<<<<<< HEAD:components/registration/MultiStepForm.tsx
         .regex(/^[A-Z]{2}\d{6}$/, "MSSV không đúng định dạng"),
+========
+        .regex(/^[A-Za-z]{2}\d{6}$/, "MSSV không đúng định dạng"),
+>>>>>>>> 42bcc281e0bd2347cd4a968b025020fbb50fc214:components/client/MultiStepForm.tsx
       phone: z
         .string()
         .min(1, "Vui lòng nhập số điện thoại")
@@ -260,6 +264,41 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
     }
   };
 
+  // Check email existence via API
+  const checkEmailExists = async (email: string) => {
+    if (!email) return false;
+    try {
+      const res = await fetch(
+        `/api/check-email?email=${encodeURIComponent(email)}`
+      );
+      if (!res.ok) {
+        // treat non-OK as failure to check
+        return Promise.reject(new Error("Không thể kiểm tra email"));
+      }
+      const json = await res.json();
+      return !!json?.exists;
+    } catch (err) {
+      return Promise.reject(err);
+    }
+  };
+
+  const handleEmailBlur = async (value: string) => {
+    // clear previous email error first
+    if (errors.email) setErrors((prev) => ({ ...prev, email: "" }));
+
+    const email = value?.trim();
+    if (!email) return;
+
+    try {
+      const exists = await checkEmailExists(email);
+      if (exists) {
+        setErrors((prev) => ({ ...prev, email: "Email đã được sử dụng" }));
+      }
+    } catch (err: any) {
+      setErrors((prev) => ({ ...prev, email: "Không thể kiểm tra email" }));
+    }
+  };
+
   const handleNext = () => {
     // Validate current step before moving forward
     const currentSchema = validationSchemas[currentStep];
@@ -281,9 +320,27 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
 
     // Clear errors and proceed
     setErrors({});
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
-    }
+    // If this is the Personal Information step, ensure email isn't taken
+    const proceed = async () => {
+      if (currentStep === 1) {
+        try {
+          const exists = await checkEmailExists(formData.email);
+          if (exists) {
+            setErrors({ email: "Email đã được sử dụng" });
+            return;
+          }
+        } catch (err) {
+          setErrors({ email: "Không thể kiểm tra email" });
+          return;
+        }
+      }
+
+      if (currentStep < steps.length - 1) {
+        setCurrentStep(currentStep + 1);
+      }
+    };
+
+    void proceed();
   };
 
   const handlePrev = () => {
@@ -293,7 +350,23 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
   };
 
   const handleFinalSubmit = () => {
-    onSubmit(formData);
+    const submit = async () => {
+      // Final check for email before submit
+      try {
+        const exists = await checkEmailExists(formData.email);
+        if (exists) {
+          setErrors({ email: "Email đã được sử dụng" });
+          return;
+        }
+      } catch (err) {
+        setErrors({ email: "Không thể kiểm tra email" });
+        return;
+      }
+
+      onSubmit(formData);
+    };
+
+    void submit();
   };
 
   const currentStepData = steps[currentStep];
@@ -537,6 +610,10 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                           name={field.name}
                           value={formData[field.name as keyof typeof formData]}
                           onChange={handleChange}
+                          onBlur={(e) =>
+                            field.name === "email" &&
+                            handleEmailBlur(e.currentTarget.value)
+                          }
                           required={field.required}
                           className={`w-full px-4 py-3 text-base border rounded-lg focus:ring-2 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-white/40 ${
                             errors[field.name]
@@ -567,6 +644,7 @@ const MultiStepForm = ({ onSubmit }: MultiStepFormProps) => {
                 onClick={handlePrev}
                 disabled={currentStep === 0}
                 className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-white/5 backdrop-blur-sm text-white/80 font-semibold rounded-lg border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all disabled:opacity-30 disabled:cursor-not-allowed w-full sm:w-auto justify-center shadow-sm"
+
               >
                 <span>←</span>{" "}
                 <span className="hidden sm:inline">Quay Lại</span>
